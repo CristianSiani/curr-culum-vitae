@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Cristian Siñani · CV Operaciones & Tecnología</title>
+    <!-- Fuentes modernas -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #10172b 0%, #1a2335 100%);
+            font-family: 'Inter', sans-serif;
+            color: #e2e8f0;
+            padding: 2rem 1.5rem;
+            line-height: 1.5;
+            transition: background 0.3s ease;
+        }
+
+        /* Modo claro */
+        body.light-mode {
+            background: linear-gradient(145deg, #eef2f9 0%, #d9e2ef 100%);
+            color: #0a1e2f;
+        }
+
+        body.light-mode .cv-container {
+            background: #ffffff;
+            color: #1e293b;
+        }
+
+        body.light-mode .sidebar {
+            background: #f8fafc;
+            border-right-color: #e2e8f0;
+        }
+
+        body.light-mode .content {
+            background: #ffffff;
+        }
+
+        body.light-mode .section-title {
+            color: #0f172a;
+        }
+
+        body.light-mode .about-text, 
+        body.light-mode .job-description {
+            color: #334155;
+        }
+
+        body.light-mode .date {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        body.light-mode .tech-tag {
+            background: #eef2ff;
+            color: #1e293b;
+        }
+
+        body.light-mode .contact-info {
+            background: #e2e8f0;
+        }
+
+        body.light-mode .contact-info a {
+            color: #0f172a;
+        }
+
+        body.light-mode .progress-bar {
+            background: #e2e8f0;
+        }
+
+        body.light-mode footer {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        body.light-mode .badge-oper {
+            background: #0f172a20;
+            color: #0f172a;
+        }
+
+        .cv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #0f172a;
+            border-radius: 2rem;
+            box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            transition: background 0.3s;
+        }
+
+        /* Cabecera industrial */
+        .header {
+            background: #020617;
+            padding: 2rem 2.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            border-bottom: 3px solid #f59e0b;
+        }
+
+        .title-section h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff, #fbbf24);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .badge-oper {
+            display: inline-block;
+            background: #f59e0b20;
+            backdrop-filter: blur(4px);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.75rem;
+            border: 1px solid #f59e0b80;
+            color: #fde68a;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background: #1e293b;
+            padding: 0.7rem 1.5rem;
+            border-radius: 60px;
+        }
+
+        .contact-info a, .contact-info span {
+            color: #cbd5e6;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: #fbbf24;
+            transform: translateY(-2px);
+        }
+
+        /* Layout principal */
+        .cv-main {
+            display: grid;
+            grid-template-columns: 1fr 2.2fr;
+            gap: 0;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            background: #111827;
+            padding: 2rem 1.8rem;
+            border-right: 1px solid #1e293b;
+        }
+
+        .profile-icon {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(145deg, #f59e0b, #b45309);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.4);
+            border: 3px solid #fbbf24;
+        }
+
+        .avatar i {
+            font-size: 3.5rem;
+            color: #020617;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #fbbf24;
+            border-left: 4px solid #f59e0b;
+            padding-left: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .progress-bar {
+            background: #1e293b;
+            height: 6px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: #f59e0b;
+            width: 0%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            padding: 0.4rem 0;
+            border-bottom: 1px dashed #334155;
+        }
+
+        .interest-item {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 0.85rem;
+            padding: 0.4rem 0;
+        }
+
+        .interest-item i {
+            width: 24px;
+            color: #fbbf24;
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        .content {
+            padding: 2rem 2rem;
+            background: #0f172a;
+        }
+
+        .about-text {
+            background: #1e293b;
+            padding: 1rem 1.3rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #f59e0b;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .job, .education-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .job-header, .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.4rem;
+        }
+
+        .job-title, .edu-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #fde68a;
+        }
+
+        .company, .institute {
+            font-weight: 500;
+            color: #fbbf24;
+            font-size: 0.85rem;
+        }
+
+        .date {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            background: #1e293b;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+        }
+
+        .job-description {
+            font-size: 0.85rem;
+            color: #cbd5e6;
+            margin-top: 0.5rem;
+            padding-left: 0.8rem;
+            border-left: 2px solid #334155;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 8px 0 4px;
+        }
+
+        .tech-tag {
+            background: #1e293b;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #fde68a;
+        }
+
+        hr {
+            margin: 1rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, #f59e0b40, transparent);
+        }
+
+        footer {
+            background: #020617;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.7rem;
+            color: #94a3b8;
+            border-top: 1px solid #f59e0b20;
+        }
+
+        .dark-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #f59e0b;
+            border: none;
+            color: #020617;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+            z-index: 99;
+            transition: 0.2s;
+            font-weight: bold;
+        }
+
+        .dark-toggle:hover {
+            transform: scale(1.05);
+            background: #fbbf24;
+        }
+
+        @media (max-width: 800px) {
+            .cv-main {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                border-right: 0;
+                border-bottom: 1px solid #1e293b;
+            }
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .contact-info {
+                justify-content: center;
+            }
+            body {
+                padding: 1rem;
+            }
+        }
+
+        i.fa, i.fab, i.fas {
+            margin-right: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="header">
+            <div class="title-section">
+                <h1>CRISTIAN SIÑANI</h1>
+                <div class="badge-oper">
+                    <i class="fas fa-tachometer-alt"></i> Operador de Sala de Control | Supervisión | Tecnología & Análisis de Datos
+                </div>
+            </div>
+            <div class="contact-info">
+                <span><i class="fas fa-phone-alt"></i> 3876048968</span>
+                <a href="mailto:sinanicristian6@gmail.com"><i class="fas fa-envelope"></i> sinanicristian6@gmail.com</a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/cristian-siñani</a>
+            </div>
+        </div>
+
+        <div class="cv-main">
+            <!-- SIDEBAR IZQUIERDA: Hard skills, herramientas, idiomas -->
+            <div class="sidebar">
+                <div class="profile-icon">
+                    <div class="avatar">
+                        <i class="fas fa-user-cog"></i>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title"><i class="fas fa-microchip"></i> Habilidades Técnicas</div>
+                    <div class="skill-item">
+                        <div class="skill-name">Power BI / SQL <span>85%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">HTML, CSS, JavaScript <span>75%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">AutoCAD / Office <span>90%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Análisis de Datos <span>80%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Gestión & Coordinación <span>88%</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title"><i class="fas fa-tools"></i> Competencias Operativas</div>
+                    <div class="interest-item"><i class="fas fa-check-circle"></i> Supervisión de obras</div>
+                    <div class="interest-item"><i class="fas fa-chart-line"></i> Control procesos industriales</div>
+                    <div class="interest-item"><i class="fas fa-shield-alt"></i> Seguridad & cumplimiento</div>
+                    <div class="interest-item"><i class="fas fa-brain"></i> Toma de decisiones bajo presión</div>
+                    <div class="interest-item"><i class="fas fa-users"></i> Coordinación de equipos</div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title"><i class="fas fa-globe"></i> Idiomas</div>
+                    <div class="lang-item"><span>Español</span> <span>Nativo</span></div>
+                    <div class="lang-item"><span>Inglés técnico</span> <span>Intermedio (lectura técnica)</span></div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO PRINCIPAL: perfil + experiencias + educación -->
+            <div class="content">
+                <div class="about-text">
+                    <strong><i class="fas fa-bullseye"></i> Perfil Profesional</strong><br>
+                    Profesional técnico con experiencia en supervisión de obras, coordinación de equipos y control de procesos operativos. Capacidad para trabajar bajo presión, resolver problemas y adaptarse a entornos industriales exigentes. Con conocimientos en herramientas informáticas, análisis de datos y sistemas tecnológicos aplicados a la gestión y operación. Orientado a la seguridad, cumplimiento de procedimientos y mejora continua.
+                </div>
+
+                <div class="section">
+                    <div class="section-title"><i class="fas fa-briefcase"></i> Experiencia Laboral</div>
+                    
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Encargado de Obra</span>
+                            <span class="date">2022 – Actualidad</span>
+                        </div>
+                        <div class="company">Ingenio San Isidro</div>
+                        <div class="job-description">
+                            Supervisión y coordinación de equipos de trabajo en proyectos de construcción. Control de tareas operativas, seguimiento de procedimientos y resolución de problemas en campo, garantizando plazos y calidad.
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Desarrollador Web (SEO)</span>
+                            <span class="date">2021 – 2022</span>
+                        </div>
+                        <div class="company">Municipalidad de General Güemes</div>
+                        <div class="job-description">
+                            Implementación de herramientas digitales y optimización de procesos mediante análisis de información y gestión de datos. Mejora de visibilidad web y soporte técnico interno.
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Programador Web Freelance</span>
+                            <span class="date">2020 – Actualidad</span>
+                        </div>
+                        <div class="company">Freelance</div>
+                        <div class="job-description">
+                            Desarrollo de soluciones tecnológicas y atención personalizada a clientes, fortaleciendo habilidades analíticas y organizativas. Creación de sitios responsive y consultoría técnica.
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Producción y Cultivo de Tabaco</span>
+                            <span class="date">2018 – 2020</span>
+                        </div>
+                        <div class="company">Fincas Rurales El Desmonte</div>
+                        <div class="job-description">
+                            Experiencia en trabajo operativo, cumplimiento de objetivos productivos y adaptación a entornos exigentes. Gestión de recursos y seguimiento de cosechas.
+                        </div>
+                    </div>
+
+                    <div class="job">
+                        <div class="job-header">
+                            <span class="job-title">Producción Cerámica</span>
+                            <span class="date">2016 – 2018</span>
+                        </div>
+                        <div class="company">Empresa Familiar Cerámica</div>
+                        <div class="job-description">
+                            Trabajo en equipo y apoyo en procesos productivos industriales. Control de calidad y mantenimiento básico de equipos.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-title"><i class="fas fa-graduation-cap"></i> Educación & Formación</div>
+                    
+                    <div class="education-item">
+                        <div class="job-header">
+                            <span class="edu-title">Profesorado en Informática</span>
+                            <span class="date">2025 – Actualidad</span>
+                        </div>
+                        <div class="institute">Instituto Amadeo Sirolli</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="job-header">
+                            <span class="edu-title">Operador Jr. en Implementación y Gestión de Datos</span>
+                            <span class="date">2025</span>
+                        </div>
+                        <div class="institute">Campus Salta</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="job-header">
+                            <span class="edu-title">Técnico Superior en Programación</span>
+                            <span class="date">2023 – 2025</span>
+                        </div>
+                        <div class="institute">Teclab</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="job-header">
+                            <span class="edu-title">Maestro Mayor de Obras</span>
+                            <span class="date">2017 – 2021</span>
+                        </div>
+                        <div class="institute">Facundo de Gurruchaga</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="job-header">
+                            <span class="edu-title">Bachiller en Informática</span>
+                            <span class="date">2010 – 2015</span>
+                        </div>
+                        <div class="institute">Don Enrique Cornejo</div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="about-text" style="background: #f59e0b10; border-left-color: #f59e0b;">
+                    <strong><i class="fas fa-chart-simple"></i> Objetivo Laboral</strong><br>
+                    Desarrollarme profesionalmente dentro de una compañía industrial líder, aportando compromiso, disciplina operativa, capacidad analítica y adaptación tecnológica para contribuir al cumplimiento de los objetivos de producción y seguridad.
+                </div>
+            </div>
+        </div>
+        <footer>
+            <i class="fas fa-hard-hat"></i> Cristian Siñani · Operaciones, Supervisión y Tecnología · Disponibilidad full-time
+        </footer>
+    </div>
+
+    <button class="dark-toggle" id="themeToggle" aria-label="Cambiar modo claro/oscuro">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <script>
+        const toggleBtn = document.getElementById('themeToggle');
+        const body = document.body;
+        const icon = toggleBtn.querySelector('i');
+
+        // Verificar preferencia guardada
+        if (localStorage.getItem('cv-theme') === 'light') {
+            body.classList.add('light-mode');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        } else {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('cv-theme', 'light');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                localStorage.setItem('cv-theme', 'dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+    </script>
+</body>
+</html>
